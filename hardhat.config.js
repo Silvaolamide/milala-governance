@@ -3,12 +3,11 @@ require("@openzeppelin/hardhat-upgrades");
 require("@nomiclabs/hardhat-ethers");
 require("@nomiclabs/hardhat-etherscan");
 require("hardhat-contract-sizer");
-require("dotenv").config();
+require("dotenv").config({ path: ".env" });
+// require("dotenv").config();
 const { mnemonic, ETHERSCAN_KEY } = require('./.secret.json');
-// console.log(process.env)
-// const DEV_PRIVATE_KEY = process.env.DEV_PRIVATE_KEY;
-// const  ETHERSCAN_KEY =  process.env.ETHERSCAN_KEY
-// console.log(DEV_PRIVATE_KEY)
+const { API_URL, PRIVATE_KEY, ETHERSCAN_KEY_GOERLI } = process.env;
+
 module.exports = {
   solidity: {
     version: "0.8.9",
@@ -20,13 +19,18 @@ module.exports = {
     },
   },
   networks: {
+    hardhat: {}, 
     testnet3: {
       url: `https://data-seed-prebsc-1-s1.binance.org:8545/`,
       accounts: [mnemonic]
     },
+  //   goerli: {
+  //     url: API_URL,
+  //     accounts: [`0x${PRIVATE_KEY}`]
+  //  }
   },
   etherscan: {
-    apiKey: ETHERSCAN_KEY
+    apiKey: ETHERSCAN_KEY_GOERLI
   
   },
 };

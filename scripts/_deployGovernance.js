@@ -16,13 +16,13 @@ console.log = function(d) { //
 
 // scripts/index.js
 async function main() {
-const TokenAddress= '0x5F9DA3f5E6E29BbA03b532280A0367e22dB0ff30';
+const TokenAddress= '0x734Fbc13488bc07e0B68Bf080653f937922B4A66';
 // const TimelockAddress= '0xd234e8B392e2B8ba66cA7143E913E2D1196DC75C';
 
 const minDelay = 0;
-const proposer = '0xbB2B3074FfD055B77A6b99E78C820f85AB3429a0';
-const executor = '0xbB2B3074FfD055B77A6b99E78C820f85AB3429a0';
-const admin = '0xbB2B3074FfD055B77A6b99E78C820f85AB3429a0';
+const proposer = '0xc6B0d512670fa464F515a8ce971609c78CBF0Cb7';
+const executor = '0xc6B0d512670fa464F515a8ce971609c78CBF0Cb7';
+const admin = '0xc6B0d512670fa464F515a8ce971609c78CBF0Cb7';
 
 const Timelock = await ethers.getContractFactory("Timelock"); 
   const timelock = await Timelock.deploy(minDelay, [proposer], [executor], admin)
