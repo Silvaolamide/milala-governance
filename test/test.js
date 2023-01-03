@@ -18,7 +18,8 @@ describe('Milala Governance Test', () => {
         const admin = owner.address;
         //Contracts Deployment
 
-
+        console.log("Deploying Contracts")
+        console.log("---------------------------------------------------------------")
             //Deploy Timelock Contract
             const Timelock = await ethers.getContractFactory("Timelock"); 
             const timelock = await Timelock.deploy(minDelay, [proposer], [executor], admin)
